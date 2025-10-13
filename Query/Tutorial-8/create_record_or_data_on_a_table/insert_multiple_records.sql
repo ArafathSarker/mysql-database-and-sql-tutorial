@@ -11,7 +11,7 @@ Syntax:
 
 -- Here is the query 
 
-INSRT INTO student
+INSERT INTO student
    VALUES
    (101,"arafath",21,3.44),
    (102,"sadik",25,3.99),
