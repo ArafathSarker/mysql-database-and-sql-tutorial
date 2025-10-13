@@ -7,13 +7,16 @@ This repository demonstrates the use of the SQL `WHERE` clause to filter data in
 ## Table: `student`
 
 Assume the `student` table has the following fields:
-
-| Field  | Type   | Description         |
-|--------|--------|-------------------|
-| Name   | VARCHAR| Student name       |
-| Age    | INT    | Student age        |
-| Gender | VARCHAR| Student gender     |
-| City   | VARCHAR| Student city       |
+| Roll | Name    | Gender | Age | GPA  | City    |
+|------|---------|--------|-----|------|---------|
+| 101  | Rahim   | Male   | 18  | 3.44 | Sylhet  |
+| 102  | Hasina  | Female | 17  | 4.50 | Dhaka   |
+| 103  | Sabul   | Male   | 18  | 3.70 | Sylhet  |
+| 104  | Suhan   | Male   | 17  | 4.50 | Khulna  |
+| 105  | Rahim   | Male   | 18  | 3.44 | Barisal |
+| 106  | Tanvir  | Male   | 17  | 4.50 | Sylhet  |
+| 107  | Hazira  | Female | 18  | 3.44 | Sylhet  |
+| 108  | Hafiza  | Female | 17  | 4.50 | Dhaka   |
 
 ---
 
