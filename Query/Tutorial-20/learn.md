@@ -16,7 +16,7 @@ WHERE condition;
 DELETE FROM student 
 WHERE Name = "Ashik";
 ```
-### Delete a Specific Record
+### Delete All Records (⚠️ Dangerous!)
 ```sql
 DELETE FROM student
 WHERE Name = 'Ashik';
