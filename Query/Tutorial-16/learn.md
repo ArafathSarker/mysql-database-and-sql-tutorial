@@ -48,3 +48,6 @@ SELECT * FROM student WHERE Gpa >= 3.11;
 
 -- Students whose age is NOT 17
 SELECT * FROM student WHERE Age != 17;
+
+SELECT * FROM student WHERE Roll BETWEEN
+101 AND 105;
