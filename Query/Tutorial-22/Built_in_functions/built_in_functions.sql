@@ -1,0 +1,23 @@
+/*
+UPPER()
+LOWER()
+CONCAT()
+POW()
+GREATEST()
+LEAST()
+LOG()
+LOG10()
+EXP()
+RAND()
+*/
+
+SELECT CONCAT("HELLO","Abir");
+SELECT CONCAT(Name,'age is ',Age) FROM student;
+SELECT POW(2,2);
+SELECT POW(Age,Gpa) FROM student;
+SELECT GREATEST(4,5,7,8,9);
+SELECT GREATEST(Age,Gpa) FROM student;
+SELECT LEAST(1,3,9,0);
+SELECT LEAST(Age,Gpa) FROM student;
+SELECT RAND(100);
+SELECT RAND(Age) FROM student;
