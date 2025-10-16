@@ -1,45 +1,43 @@
-# SQL Concept: Date and Time Functions (MySQL)
+# SQL Concept: Accessing and Modifying Data in a VIEW
 
 ## 📘 Overview
-MySQL provides several **built-in date and time functions** that help you work with and manipulate dates, times, and timestamps.  
-These functions are useful for:
-- Retrieving the current date or time
-- Extracting parts of a date (day, month, year)
-- Performing date arithmetic (adding or subtracting days, months, years)
-- Formatting or generating specific date values
+A **VIEW** in SQL behaves like a **virtual table**, meaning you can often perform standard table operations such as:
+- `SELECT`
+- `UPDATE`
+- `INSERT`
+- `DELETE`
+- `DROP`
 
-This documentation covers commonly used date functions with examples.
+However, these operations depend on the **database system** and whether the view is **updatable** (some views are read-only).
 
----
-
-## 🧩 Common Date and Time Functions
-
-| Function | Description | Example | Output (Example) |
-|-----------|--------------|----------|------------------|
-| **`CURDATE()`** | Returns the current date (YYYY-MM-DD). | `SELECT CURDATE();` | `2025-10-15` |
-| **`CURTIME()`** | Returns the current time (HH:MM:SS). | `SELECT CURTIME();` | `14:32:10` |
-| **`NOW()`** | Returns current date and time (timestamp). | `SELECT NOW();` | `2025-10-15 14:32:10` |
-| **`DAY(date)`** | Extracts the day part from a date. | `SELECT DAY('2025-10-15');` | `15` |
-| **`MONTH(date)`** | Extracts the month part from a date. | `SELECT MONTH('2025-10-15');` | `10` |
-| **`YEAR(date)`** | Extracts the year part from a date. | `SELECT YEAR('2025-10-15');` | `2025` |
-| **`DAYNAME(date)`** | Returns the weekday name for a given date. | `SELECT DAYNAME('2025-10-12');` | `Sunday` |
-| **`MONTHNAME(date)`** | Returns the month name for a given date. | `SELECT MONTHNAME('2025-11-20');` | `November` |
+This document explains how to **manipulate data using views** just like regular tables.
 
 ---
 
-## 🧠 Date Arithmetic Functions
+## 🧩 1️⃣ Selecting Data from a View
 
-### 1️⃣ `ADDDATE()` – Add an Interval to a Date
+### ✅ Syntax
 ```sql
-SELECT CURDATE();
-SELECT CURTIME();
-SELECT NOW();
-SELECT DAY();
-SELECT MONTH();
-SELECT YEAR();
-SELECT ADDDATE('2025-5-10',INTERVAL 5 DAY);
-SELECT SUBDATE('2025-5-10',INTERVAL 5 MONTH);
-SELECT ADDDATE('2025-5-10', INTERVAL 5 YEAR);
-SELECT MAKEDATE(2025,312);
-SELECT DAYNAME('2025-10-12');
-SELECT MONTHNAME('2025-11-20');
+SELECT column_list
+FROM view_name;
+
+--> Updating view this same like table
+
+UPDATE view_name
+SET column_list
+WHERE condition;
+
+--> same as table how to insert records
+
+INSERT INTO view_name (column1,column2, ..... , columnN)
+VALUES 
+(record, record, record...);
+
+--> Deleting a record in view
+
+DELETE FROM view_name
+WHERE condition;
+
+--> Droping a view like table
+
+DROP VIEW view_name;

@@ -1,39 +1,45 @@
-# 🧩 SQL OUTER JOIN — Complete Guide
+# SQL Concept: Date and Time Functions (MySQL)
 
-## 📖 Overview
+## 📘 Overview
+MySQL provides several **built-in date and time functions** that help you work with and manipulate dates, times, and timestamps.  
+These functions are useful for:
+- Retrieving the current date or time
+- Extracting parts of a date (day, month, year)
+- Performing date arithmetic (adding or subtracting days, months, years)
+- Formatting or generating specific date values
 
-An **OUTER JOIN** in SQL is used to combine rows from two or more tables, **including unmatched rows**.  
-If a row in one table doesn’t have a corresponding match in the other table, the result will still include that row — with `NULL` values for missing columns.
-
----
-
-## 🔹 Types of OUTER JOINs
-
-| Type | Description | Returns Unmatched Rows From |
-|------|--------------|------------------------------|
-| **LEFT OUTER JOIN** | Returns all rows from the left table and matching rows from the right table. | Left table |
-| **RIGHT OUTER JOIN** | Returns all rows from the right table and matching rows from the left table. | Right table |
-| **FULL OUTER JOIN** | Returns all rows from both tables — matched or not. | Both tables |
+This documentation covers commonly used date functions with examples.
 
 ---
 
-## 🧠 Syntax
+## 🧩 Common Date and Time Functions
 
+| Function | Description | Example | Output (Example) |
+|-----------|--------------|----------|------------------|
+| **`CURDATE()`** | Returns the current date (YYYY-MM-DD). | `SELECT CURDATE();` | `2025-10-15` |
+| **`CURTIME()`** | Returns the current time (HH:MM:SS). | `SELECT CURTIME();` | `14:32:10` |
+| **`NOW()`** | Returns current date and time (timestamp). | `SELECT NOW();` | `2025-10-15 14:32:10` |
+| **`DAY(date)`** | Extracts the day part from a date. | `SELECT DAY('2025-10-15');` | `15` |
+| **`MONTH(date)`** | Extracts the month part from a date. | `SELECT MONTH('2025-10-15');` | `10` |
+| **`YEAR(date)`** | Extracts the year part from a date. | `SELECT YEAR('2025-10-15');` | `2025` |
+| **`DAYNAME(date)`** | Returns the weekday name for a given date. | `SELECT DAYNAME('2025-10-12');` | `Sunday` |
+| **`MONTHNAME(date)`** | Returns the month name for a given date. | `SELECT MONTHNAME('2025-11-20');` | `November` |
+
+---
+
+## 🧠 Date Arithmetic Functions
+
+### 1️⃣ `ADDDATE()` – Add an Interval to a Date
 ```sql
--- LEFT OUTER JOIN
-SELECT a.*, b.*
-FROM tableA a
-LEFT OUTER JOIN tableB b
-  ON a.id = b.a_id;
-
--- RIGHT OUTER JOIN
-SELECT a.*, b.*
-FROM tableA a
-RIGHT OUTER JOIN tableB b
-  ON a.id = b.a_id;
-
--- FULL OUTER JOIN
-SELECT a.*, b.*
-FROM tableA a
-FULL OUTER JOIN tableB b
-  ON a.id = b.a_id;
+SELECT CURDATE();
+SELECT CURTIME();
+SELECT NOW();
+SELECT DAY();
+SELECT MONTH();
+SELECT YEAR();
+SELECT ADDDATE('2025-5-10',INTERVAL 5 DAY);
+SELECT SUBDATE('2025-5-10',INTERVAL 5 MONTH);
+SELECT ADDDATE('2025-5-10', INTERVAL 5 YEAR);
+SELECT MAKEDATE(2025,312);
+SELECT DAYNAME('2025-10-12');
+SELECT MONTHNAME('2025-11-20');
